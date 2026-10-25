@@ -57,9 +57,9 @@ def get_datasets(val_fraction: float = 0.15, seed: int = 42):
 def get_dataloaders(batch_size: int = 32, num_workers: int = 2):
     train, val, test, classes = get_datasets()
     train_loader = DataLoader(train, batch_size=batch_size, shuffle=True,
-                              num_workers=num_workers, pin_memory=True)
+                              num_workers=num_workers, pin_memory=torch.cuda.is_available())
     val_loader = DataLoader(val, batch_size=batch_size, shuffle=False,
-                            num_workers=num_workers, pin_memory=True)
+                            num_workers=num_workers, pin_memory=torch.cuda.is_available())
     test_loader = DataLoader(test, batch_size=batch_size, shuffle=False,
-                             num_workers=num_workers, pin_memory=True)
+                             num_workers=num_workers, pin_memory=torch.cuda.is_available())
     return train_loader, val_loader, test_loader, classes
