@@ -1,0 +1,7 @@
+model,variant,size_mb,latency_ms_median,latency_ms_p95,test_acc
+resnet18_feature_extract,PyTorch FP32,44.9,13.6,19.7,0.8959
+resnet18_feature_extract,ONNX FP32,44.8,7.1,7.5,0.8959
+resnet18_feature_extract,ONNX INT8,11.3,2.7,3.3,0.8921
+mobilenet_v3_small_finetune,PyTorch FP32,6.4,4.4,5.1,0.8051
+mobilenet_v3_small_finetune,ONNX FP32,6.2,0.8,0.9,0.8051
+mobilenet_v3_small_finetune,ONNX INT8,1.9,1.2,1.4,0.0294
